@@ -1,6 +1,9 @@
+import { loadBugs } from "./functions.js"
+
 document.addEventListener("DOMContentLoaded", async () => {
+    loadBugs();
+
     const modeToggleBtn = document.getElementById("modeToggleBtn");
-    // const createInsectModal = document.getElementById("createInsectModal");
     const createInsectButton = document.getElementById("saveInsectBtn");
 
     modeToggleBtn?.addEventListener("click", () => {
@@ -20,7 +23,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         const type = typeSelect.value;
+        // TEMPORARY
         console.log(type)
+
         // Resetting the form
         form?.reset();
 

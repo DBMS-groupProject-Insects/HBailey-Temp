@@ -7,7 +7,7 @@
 
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script type="module" src="./src/main.js"></script>
+        <script type="module" src="/dist/main.js"></script>
         <title>Insects</title>
         <style>
             body { font-family: system-ui, Arial, sans-serif; margin: 0; }
@@ -26,25 +26,27 @@
     </head>
     <body class="user">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark px-3">
-        <span class="navbar-brand mb-0 h1">Insect Wingbeat Database</span>
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary px-3">
+            <span class="navbar-brand mb-0 h1">Insect Wingbeat Database</span>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <!-- Right side: Create + Mode toggle -->
-            <div class="d-flex align-items-center gap-2">
-            <button type="button" class="btn btn-primary btn-sm admin" data-bs-toggle="modal" data-bs-target="#createInsectModal">
-                Add Insect
-            </button>
-            <button type="button" id="modeToggleBtn" class="btn btn-outline-light btn-sm">
-                Admin Mode
-            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <!-- Right side: Create + Mode toggle -->
+                <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-secondary btn-sm admin" data-bs-toggle="modal" data-bs-target="#createInsectModal">
+                    Add Insect
+                </button>
+                <button type="button" id="modeToggleBtn" class="btn btn-outline-light btn-sm">
+                    Admin Mode
+                </button>
+                </div>
             </div>
-        </div>
         </nav>
+        <!-- Bug List  -->
+        <div id="list"></div>
 
         <!-- Create Insect Modal -->
         <div class="modal fade" id="createInsectModal" tabindex="-1" aria-labelledby="createInsectModalLabel" aria-hidden="true">

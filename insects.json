@@ -1,0 +1,104 @@
+[
+    { 
+        "_id": "1", 
+        "name":
+        {
+            "common": "Beetle",
+            "scientific": "Coleoptera"
+        },
+        "lifespan": 3,
+        "wingbeat": 15,
+        "dimension":
+        {
+            "size": 10,
+            "wingspan": 15
+        },
+        "population": 
+        {
+            "canada": 100000,
+            "nova scotia": 15000
+        },
+        "descriptor":
+        {
+            "features":
+            [
+                "horns",
+                "wings",
+                "legs"
+            ],
+            "colours":
+            [
+                "black",
+                "green"
+            ]
+        }
+    },
+    {
+        "_id": "2",
+        "name":
+        {
+            "common": "Moth",
+            "scientific": "Lepidoptera"
+        },
+        "lifespan": 1,
+        "wingbeat": 40,
+        "dimension":
+        {
+            "size": 15,
+            "wingspan": 30
+        },
+        "population":
+        {
+            "canada": 250000,
+            "nova scotia": 30000
+        },
+        "descriptor":
+        {
+            "features":
+            [
+                "antennae",
+                "wings",
+                "legs"
+            ],
+            "colours":
+            [
+                "brown",
+                "white"
+            ]
+        }
+    },
+    {
+        "_id": "3",
+        "name":
+        {
+            "common": "Dragonfly",
+            "scientific": "Odonata"
+        },
+        "lifespan": 2,
+        "wingbeat": 30,
+        "dimension":
+        {
+            "size": 50,
+            "wingspan": 80
+        },
+        "population":
+        {
+            "canada": 80000,
+            "nova scotia": 10000
+        },
+        "descriptor":
+        {
+            "features":
+            [
+                "compound eyes",
+                "wings",
+                "legs"
+            ],
+            "colours":
+            [
+                "blue",
+                "green"
+            ]
+        }
+    }
+]
