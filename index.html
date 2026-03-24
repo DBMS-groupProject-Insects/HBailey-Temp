@@ -28,15 +28,14 @@
     <body class="user">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-md navbar-dark bg-primary px-3">
-            <span class="navbar-brand mb-0 h1">Insect Wingbeat Database</span>
+            <span class="navbar-brand mb-0 h1"><i class="bi bi-bug me-2"></i>Insect Wingbeat Database</span>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarContent">
-                <!-- Right side: Create + Mode toggle -->
-                <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 ms-auto">
                 <button type="button" class="btn btn-secondary btn-sm admin" data-bs-toggle="modal" data-bs-target="#createInsectModal">
                     Add Insect
                 </button>
@@ -46,8 +45,29 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Search and Sort -->
+        <div class="d-flex align-items-center justify-content-between p-3 pb-0">
+            <div class="input-group" style="width: 260px;">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control form-control-sm" id="searchInput" placeholder="Search by name or frequency..." />
+            </div>
+            <div class="input-group" style="width: fit-content;">
+                <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" id="sortLabel">
+                    Name
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item sort-key-item" href="#" data-sort="name">Name</a></li>
+                    <li><a class="dropdown-item sort-key-item" href="#" data-sort="wingbeat">Frequency</a></li>
+                </ul>
+                <button class="btn btn-outline-secondary btn-sm" id="sortDirBtn">
+                    <i class="bi bi-sort-up" id="sortDirIcon"></i>
+                </button>
+            </div>
+        </div>
+
         <!-- Bug List  -->
-        <div id="list"></div>
+        <div class="p-3" id="accordion-container"></div>
 
         <!-- Create Insect Modal -->
         <div class="modal fade" id="createInsectModal" tabindex="-1" aria-labelledby="createInsectModalLabel" aria-hidden="true">
@@ -67,6 +87,10 @@
                         <input type="text" class="form-control" id="createScientificName" />
                     </div>
                     <div class="mb-3">
+                        <label for="createType" class="form-label">Type</label>
+                        <input type="text" class="form-control" id="createType" placeholder="e.g. Beetle, Ant, Fly" />
+                    </div>
+                    <div class="mb-3">
                         <label for="createLifespan" class="form-label">Lifespan (yrs)</label>
                         <input type="number" class="form-control" id="createLifespan" />
                     </div>
@@ -81,6 +105,14 @@
                     <div class="mb-3">
                         <label for="createWingspan" class="form-label">Wingspan (mm)</label>
                         <input type="number" class="form-control" id="createWingspan" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="createColours" class="form-label">Colours</label>
+                        <input type="text" class="form-control" id="createColours" placeholder="e.g. black, green" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="createCharacteristics" class="form-label">Characteristics</label>
+                        <input type="text" class="form-control" id="createCharacteristics" placeholder="e.g. horns, wings, legs" />
                     </div>
                 </form>
                 </div>
@@ -110,6 +142,10 @@
                         <input type="text" class="form-control" id="editScientificName" />
                     </div>
                     <div class="mb-3">
+                        <label for="editType" class="form-label">Type</label>
+                        <input type="text" class="form-control" id="editType" placeholder="e.g. Beetle, Ant, Fly" />
+                    </div>
+                    <div class="mb-3">
                         <label for="editLifespan" class="form-label">Lifespan (yrs)</label>
                         <input type="number" class="form-control" id="editLifespan" />
                     </div>
@@ -124,6 +160,14 @@
                     <div class="mb-3">
                         <label for="editWingspan" class="form-label">Wingspan (mm)</label>
                         <input type="number" class="form-control" id="editWingspan" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="editColours" class="form-label">Colours</label>
+                        <input type="text" class="form-control" id="editColours" placeholder="e.g. black, green" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="editCharacteristics" class="form-label">Characteristics</label>
+                        <input type="text" class="form-control" id="editCharacteristics" placeholder="e.g. horns, wings, legs" />
                     </div>
                 </form>
                 </div>
