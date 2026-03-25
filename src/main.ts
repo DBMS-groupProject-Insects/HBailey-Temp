@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // REPLACE LINE BELOW TO API EDIT ENDPOINT
         console.log(JSON.stringify(insect, null, 2));
 
+        // Hiding Modal
         if (modalElement) {
             const modal =
                 (window as any).bootstrap.Modal.getInstance(modalElement) ||
