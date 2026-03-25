@@ -83,7 +83,7 @@ export async function loadBugs() {
         if (icon) icon.className = sortAsc ? 'bi bi-sort-up' : 'bi bi-sort-down';
     }
 
-    function render() {
+    function renderAccordion() {
         const accordion = document.getElementById("accordion-container")!;
         accordion.innerHTML = buildAccordion(getSorted());
         updateSortButtons();
@@ -91,6 +91,7 @@ export async function loadBugs() {
     }
 
     function attachButtons() {
+        // Edit Button Modal
         document.querySelectorAll(".edit-btn").forEach((button) => {
             button.addEventListener("click", () => {
                 const id = (button as HTMLElement).dataset.id!;
@@ -112,7 +113,8 @@ export async function loadBugs() {
                 modal.show();
             });
         });
-
+        
+        // Delete Button
         document.querySelectorAll(".delete-btn").forEach((button) => {
             button.addEventListener("click", async () => {
                 // REPLACE LINE BELOW TO API DELETE ENDPOINT
@@ -129,19 +131,19 @@ export async function loadBugs() {
             sortKey = key;
             sortAsc = true;
             (document.getElementById('sortLabel')!).childNodes[0].textContent = key === 'name' ? 'Name ' : 'Frequency ';
-            render();
+            renderAccordion();
         });
     });
 
     document.getElementById('sortDirBtn')!.addEventListener('click', () => {
         sortAsc = !sortAsc;
-        render();
+        renderAccordion();
     });
 
     document.getElementById('searchInput')!.addEventListener('input', (e) => {
         searchQuery = (e.target as HTMLInputElement).value;
-        render();
+        renderAccordion();
     });
 
-    render();
+    renderAccordion();
 }
