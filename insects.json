@@ -6,6 +6,7 @@
             "common": "Beetle",
             "scientific": "Coleoptera"
         },
+        "type": "Beetle",
         "lifespan": 3,
         "wingbeat": 15,
         "dimension":
@@ -40,6 +41,7 @@
             "common": "Moth",
             "scientific": "Lepidoptera"
         },
+        "type": "Moth",
         "lifespan": 1,
         "wingbeat": 40,
         "dimension":
@@ -74,6 +76,7 @@
             "common": "Dragonfly",
             "scientific": "Odonata"
         },
+        "type": "Dragonfly",
         "lifespan": 2,
         "wingbeat": 30,
         "dimension":

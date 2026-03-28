@@ -8,7 +8,12 @@
 
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script type="module" src="/dist/main.js"></script>
+        <!-- Supabase project URL + anon (public) key -->
+        <script>
+            window.SUPABASE_URL = "https://vhnvelhpfggxmdjncjuw.supabase.co";
+            window.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZobnZlbGhwZmdneG1kam5janV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5NDI4OTEsImV4cCI6MjA4OTUxODg5MX0.oWPnPOibW-qY-mSlJIS5kJN9vI016of0IyYMVUnAaBA";
+        </script>
+        <script type="module" src="dist/main.js"></script>
         <title>Wingbeat Database</title>
         <style>
             body { font-family: system-ui, Arial, sans-serif; margin: 0; }

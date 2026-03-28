@@ -1,0 +1,10 @@
+{
+  "name": "wingbeat-database",
+  "private": true,
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
