@@ -8,7 +8,12 @@
 
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script type="module" src="/dist/main.js"></script>
+        <!-- Supabase project URL + anon (public) key -->
+        <script>
+            window.SUPABASE_URL = "https://vhnvelhpfggxmdjncjuw.supabase.co";
+            window.SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZobnZlbGhwZmdneG1kam5janV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM5NDI4OTEsImV4cCI6MjA4OTUxODg5MX0.oWPnPOibW-qY-mSlJIS5kJN9vI016of0IyYMVUnAaBA";
+        </script>
+        <script type="module" src="dist/main.js"></script>
         <title>Wingbeat Database</title>
         <style>
             body { font-family: system-ui, Arial, sans-serif; margin: 0; }
@@ -24,12 +29,12 @@
             pre { background: #f6f8fa; padding: 10px; border-radius: 10px; overflow: auto; }
             body.user .admin { display: none !important; }
             .custom-navbar { background-color: #457a00}
-            .navbar-font { color: white }
+            .navbar-font { color: white; user-select: none; }
         </style>
     </head>
     <body class="user">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-md custom-navbar px-3">
+        <nav class="navbar navbar-expand-md navbar-dark custom-navbar px-3">
             <span class="navbar-brand mb-0 h1 navbar-font"><i class="bi bi-bug me-2"></i>Insect Wingbeat Database</span>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
@@ -93,20 +98,12 @@
                         <input type="text" class="form-control" id="createType" placeholder="e.g. Beetle, Ant, Fly" />
                     </div>
                     <div class="mb-3">
-                        <label for="createLifespan" class="form-label">Lifespan (yrs)</label>
-                        <input type="number" class="form-control" id="createLifespan" />
-                    </div>
-                    <div class="mb-3">
                         <label for="createWingbeat" class="form-label">Frequency (Hz)</label>
                         <input type="number" class="form-control" id="createWingbeat" />
                     </div>
                     <div class="mb-3">
                         <label for="createSize" class="form-label">Size (mm)</label>
                         <input type="number" class="form-control" id="createSize" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="createWingspan" class="form-label">Wingspan (mm)</label>
-                        <input type="number" class="form-control" id="createWingspan" />
                     </div>
                     <div class="mb-3">
                         <label for="createColours" class="form-label">Colours</label>
@@ -148,20 +145,12 @@
                         <input type="text" class="form-control" id="editType" placeholder="e.g. Beetle, Ant, Fly" />
                     </div>
                     <div class="mb-3">
-                        <label for="editLifespan" class="form-label">Lifespan (yrs)</label>
-                        <input type="number" class="form-control" id="editLifespan" />
-                    </div>
-                    <div class="mb-3">
                         <label for="editWingbeat" class="form-label">Frequency (Hz)</label>
                         <input type="number" class="form-control" id="editWingbeat" />
                     </div>
                     <div class="mb-3">
                         <label for="editSize" class="form-label">Size (mm)</label>
                         <input type="number" class="form-control" id="editSize" />
-                    </div>
-                    <div class="mb-3">
-                        <label for="editWingspan" class="form-label">Wingspan (mm)</label>
-                        <input type="number" class="form-control" id="editWingspan" />
                     </div>
                     <div class="mb-3">
                         <label for="editColours" class="form-label">Colours</label>
