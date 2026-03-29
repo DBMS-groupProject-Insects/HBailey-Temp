@@ -26,7 +26,7 @@ function mapSupabaseRow(row: Record<string, unknown>): Item {
         lifespan: "—",
         wingbeat: freq,
         dimension: {
-            size: row.size != null && String(row.size) !== "" ? String(row.size) : "—",
+            size: row.size != null && String(row.size) !== "" ? (parseFloat(String(row.size)) || "—") : "—",
             wingspan: "—",
         },
         descriptor: {
@@ -133,20 +133,16 @@ export async function loadBugs() {
             html +=                 `<thead><tr>`;
             html +=                     `<th>Scientific Name</th>`;
             html +=                     `<th>Type</th>`;
-            html +=                     `<th>Lifespan (yrs)</th>`;
             html +=                     `<th>Frequency (Hz)</th>`;
             html +=                     `<th>Size (mm)</th>`;
-            html +=                     `<th>Wingspan (mm)</th>`;
             html +=                     `<th>Colours</th>`;
             html +=                     `<th>Characteristics</th>`;
             html +=                 `</tr></thead>`;
             html +=                 `<tbody><tr>`;
             html +=                     `<td><em>${item.name.scientific}</em></td>`;
             html +=                     `<td>${item.type}</td>`;
-            html +=                     `<td>${item.lifespan}</td>`;
             html +=                     `<td>${item.wingbeat}</td>`;
             html +=                     `<td>${item.dimension.size}</td>`;
-            html +=                     `<td>${item.dimension.wingspan}</td>`;
             html +=                     `<td>${item.descriptor.colours.join(", ")}</td>`;
             html +=                     `<td>${item.descriptor.features.join(", ")}</td>`;
             html +=                 `</tr></tbody>`;
@@ -201,10 +197,8 @@ export async function loadBugs() {
                 (document.getElementById("editCommonName") as HTMLInputElement).value = item.name.common;
                 (document.getElementById("editScientificName") as HTMLInputElement).value = item.name.scientific;
                 (document.getElementById("editType") as HTMLInputElement).value = item.type;
-                (document.getElementById("editLifespan") as HTMLInputElement).value = String(item.lifespan);
                 (document.getElementById("editWingbeat") as HTMLInputElement).value = String(item.wingbeat);
                 (document.getElementById("editSize") as HTMLInputElement).value = String(item.dimension.size);
-                (document.getElementById("editWingspan") as HTMLInputElement).value = String(item.dimension.wingspan);
                 (document.getElementById("editColours") as HTMLInputElement).value = item.descriptor.colours.join(", ");
                 (document.getElementById("editCharacteristics") as HTMLInputElement).value = item.descriptor.features.join(", ");
 

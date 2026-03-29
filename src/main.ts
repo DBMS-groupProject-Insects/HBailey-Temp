@@ -6,10 +6,9 @@ function buildInsectRowFromForm(prefix: "create" | "edit"): Record<string, strin
     const common = (document.getElementById(`${prefix}CommonName`) as HTMLInputElement).value.trim();
     const scientific = (document.getElementById(`${prefix}ScientificName`) as HTMLInputElement).value.trim();
     const category = (document.getElementById(`${prefix}Type`) as HTMLInputElement).value.trim();
-    const lifespan = Number((document.getElementById(`${prefix}Lifespan`) as HTMLInputElement).value);
     const frequency = Number((document.getElementById(`${prefix}Wingbeat`) as HTMLInputElement).value);
     const sizeMm = Number((document.getElementById(`${prefix}Size`) as HTMLInputElement).value);
-    const wingspanMm = Number((document.getElementById(`${prefix}Wingspan`) as HTMLInputElement).value);
+
     const colours = (document.getElementById(`${prefix}Colours`) as HTMLInputElement).value;
     const characteristics = (document.getElementById(`${prefix}Characteristics`) as HTMLInputElement).value;
 
@@ -32,8 +31,6 @@ function buildInsectRowFromForm(prefix: "create" | "edit"): Record<string, strin
         .split(/[;,]/)
         .map((s) => s.trim())
         .filter(Boolean);
-    if (Number.isFinite(lifespan) && lifespan > 0) descParts.push(`lifespan ${lifespan} yrs`);
-    if (Number.isFinite(wingspanMm) && wingspanMm > 0) descParts.push(`wingspan ${wingspanMm} mm`);
     const descriptorsNormalized = descParts.join("; ");
 
     return {
